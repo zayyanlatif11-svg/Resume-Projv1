@@ -96,3 +96,30 @@ If you include this project on your resume/GitHub, highlight:
 - Downloadable IC memo export (PDF)
 - Pipeline stage tracking (sourced, LOI, diligence, close)
 - Data connectors for accounting/CRM/market-demand sources
+
+## Vercel deployment (exact settings)
+This repository is a **Vite + React + TypeScript** app (not Next.js).
+
+### Recommended Vercel project settings
+- **Framework Preset:** `Vite`
+- **Root Directory:** `.` (repository root)
+- **Install Command:** `npm install`
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+- **Node Version:** default Vercel Node is fine (Node 18+ recommended)
+
+### Why 404 NOT_FOUND can happen
+A common cause is using the wrong output directory or root directory. For this repo, Vercel must build from the repo root and publish `dist`.
+
+For client-side routing safety, this repo includes `vercel.json` with a rewrite to `index.html`.
+
+### One-click checklist in Vercel UI
+1. Import the repository.
+2. In **Project Settings → Build & Development Settings**, set:
+   - Root Directory: `.`
+   - Install Command: `npm install`
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+3. Redeploy.
+4. If you still see 404, clear overridden settings and redeploy with the repo defaults.
+
