@@ -18,9 +18,20 @@ export function ProjectGallery() {
           </p>
         </div>
 
+        <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-y border-surface-line py-4 text-sm">
+          <span className="font-semibold text-ink">
+            6 tools
+            <span className="ml-1.5 font-normal text-ink-muted">in the portfolio</span>
+          </span>
+          <span className="hidden h-4 w-px bg-surface-line sm:block" />
+          <span className="font-medium text-ink-muted">
+            Sourcing → Diligence → CRE → Risk → Trading → Operations
+          </span>
+        </div>
+
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
+          {projects.map((p, i) => (
+            <ProjectCard key={p.slug} project={p} index={i} />
           ))}
         </div>
       </div>

@@ -4,21 +4,52 @@ import type { ReactNode } from "react";
 
 export function MockWindow({
   title,
+  tabs = ["Overview", "All records", "Review"],
   children,
 }: {
   title: string;
+  /** Faux navigation tabs shown in the app toolbar. Set to [] to hide. */
+  tabs?: string[];
   children: ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-surface-line bg-white shadow-card">
+    <div className="overflow-hidden rounded-xl border border-surface-line bg-white shadow-lift">
+      {/* window chrome */}
       <div className="flex items-center gap-2 border-b border-surface-line bg-surface-subtle px-4 py-2.5">
         <span className="flex gap-1.5">
           <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
           <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
           <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
         </span>
-        <span className="ml-2 text-xs font-medium text-ink-muted">{title}</span>
+        <span className="ml-2 truncate text-xs font-medium text-ink-muted">
+          {title}
+        </span>
       </div>
+
+      {/* app toolbar */}
+      {tabs.length > 0 && (
+        <div className="flex items-center justify-between gap-3 border-b border-surface-line bg-white px-4 py-2">
+          <div className="flex gap-1 overflow-hidden">
+            {tabs.map((t, i) => (
+              <span
+                key={t}
+                className={`whitespace-nowrap rounded-md px-2.5 py-1 text-[11px] font-medium ${
+                  i === 0
+                    ? "bg-accent-wash text-accent"
+                    : "text-ink-muted"
+                }`}
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+          <span className="hidden items-center gap-1.5 rounded-md border border-surface-line bg-surface-subtle px-2.5 py-1 text-[11px] text-ink-muted sm:flex">
+            <span className="h-1.5 w-1.5 rounded-full bg-slate-300" />
+            Search
+          </span>
+        </div>
+      )}
+
       <div className="p-4 sm:p-5">{children}</div>
     </div>
   );

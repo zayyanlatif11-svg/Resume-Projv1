@@ -10,7 +10,7 @@ const lines = [
 
 export function AddbackScrubber() {
   return (
-    <MockWindow title="Add-Back Scrubber — normalization">
+    <MockWindow title="Add-Back Scrubber — normalization" tabs={["P&L", "Add-backs", "Summary"]}>
       <div className="grid grid-cols-3 gap-3">
         <Kpi label="Reported EBITDA" value="$310K" />
         <Kpi label="Total add-backs" value="$175K" tone="accent" />

@@ -18,7 +18,7 @@ const equity = [0, 1, 0.6, 1.8, 1.4, 2.6, 2.2, 3.4, 3.0, 4.2];
 
 export function PostTrade() {
   return (
-    <MockWindow title="Post-Trade Analytics — performance review">
+    <MockWindow title="Post-Trade Analytics — performance review" tabs={["Overview", "Setups", "Mistakes"]}>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Kpi label="Win rate" value="51%" />
         <Kpi label="Expectancy" value="+0.21R" tone="good" />

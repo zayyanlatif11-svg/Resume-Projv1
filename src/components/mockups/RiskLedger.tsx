@@ -22,7 +22,7 @@ const cellTone = (r: number, c: number) => {
 
 export function RiskLedger() {
   return (
-    <MockWindow title="RiskLedger — operational risk register">
+    <MockWindow title="RiskLedger — operational risk register" tabs={["Register", "Severity matrix", "Owners"]}>
       <div className="grid gap-4 md:grid-cols-[1.4fr_1fr]">
         <div className="overflow-hidden rounded-lg border border-surface-line">
           <table className="w-full text-left text-xs">

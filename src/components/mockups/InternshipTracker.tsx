@@ -10,7 +10,7 @@ const leads = [
 
 export function InternshipTracker() {
   return (
-    <MockWindow title="Internship Lead Tracker — funnel">
+    <MockWindow title="Internship Lead Tracker — funnel" tabs={["Funnel", "Outreach", "Follow-ups"]}>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Kpi label="Active leads" value="34" />
         <Kpi label="Outreach sent" value="22" tone="accent" />

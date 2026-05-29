@@ -3,8 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import {
   ArrowLeft,
   ArrowUpRight,
-  Briefcase,
   Lightbulb,
+  Sparkles,
   Target,
   Users,
   Wrench,
@@ -42,7 +42,7 @@ export function CaseStudy() {
     <article className="bg-white">
       {/* Hero */}
       <header className="border-b border-surface-line bg-surface-subtle">
-        <div className="container-content py-12 sm:py-16">
+        <div className="container-content py-10 sm:py-14">
           <Link
             to="/#case-studies"
             className="inline-flex items-center gap-2 text-sm font-medium text-ink-muted transition-colors hover:text-ink"
@@ -55,32 +55,66 @@ export function CaseStudy() {
             <StatusBadge status={project.status} />
           </div>
 
-          <h1 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl">
+          <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl">
             {project.title}
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-muted">
             {project.oneLiner}
           </p>
+
+          {/* At a glance */}
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {project.metrics.map((m) => (
+              <div
+                key={m.label}
+                className="rounded-xl border border-surface-line bg-white px-4 py-3"
+              >
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-ink-muted">
+                  {m.label}
+                </p>
+                <p className="mt-0.5 text-xl font-bold text-ink">{m.value}</p>
+              </div>
+            ))}
+            <div className="rounded-xl border border-surface-line bg-white px-4 py-3">
+              <p className="text-[10px] font-semibold uppercase tracking-wide text-ink-muted">
+                Stage
+              </p>
+              <p className="mt-1 text-sm font-bold text-ink">{project.status}</p>
+            </div>
+            <div className="rounded-xl border border-surface-line bg-white px-4 py-3">
+              <p className="text-[10px] font-semibold uppercase tracking-wide text-ink-muted">
+                Data shown
+              </p>
+              <p className="mt-1 text-sm font-bold text-ink">Sample</p>
+            </div>
+          </div>
         </div>
       </header>
 
       <div className="container-content grid gap-12 py-12 sm:py-16 lg:grid-cols-[1.5fr_1fr]">
         {/* Main column */}
         <div className="space-y-10">
-          <Section icon={Briefcase} title="Overview">
+          <Section title="Overview">
             <p>{cs.overview}</p>
           </Section>
 
-          <div className="rounded-2xl border border-surface-line bg-surface-subtle p-6">
+          <div className="rounded-2xl border border-surface-line bg-ink p-6 text-white sm:p-7">
             <div className="flex items-center gap-2">
-              <Target size={18} className="text-accent" />
-              <h2 className="text-base font-bold text-ink">
-                The business problem
-              </h2>
+              <Target size={18} className="text-accent-soft" />
+              <h2 className="text-base font-bold">The business problem</h2>
             </div>
-            <p className="mt-3 leading-relaxed text-ink-soft">
+            <p className="mt-3 leading-relaxed text-slate-300">
               {cs.businessProblem}
             </p>
+          </div>
+
+          {/* Dashboard preview — placed early so the tool leads */}
+          <div>
+            <div className="mb-3 flex items-center justify-between">
+              <p className="eyebrow">Dashboard preview</p>
+              <span className="text-xs text-ink-muted">Sample-data mockup</span>
+            </div>
+            <Mockup mockup={cs.mockup} />
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2">
@@ -96,12 +130,6 @@ export function CaseStudy() {
             <p>{cs.whatIBuilt}</p>
           </Section>
 
-          {/* Dashboard preview */}
-          <div>
-            <p className="eyebrow mb-3">Dashboard preview</p>
-            <Mockup mockup={cs.mockup} />
-          </div>
-
           {/* Core features */}
           <div>
             <h2 className="text-base font-bold text-ink">Core features</h2>
@@ -109,7 +137,7 @@ export function CaseStudy() {
               {cs.features.map((f) => (
                 <div
                   key={f.title}
-                  className="rounded-xl border border-surface-line bg-white p-5 shadow-card"
+                  className="rounded-xl border border-surface-line bg-white p-5 shadow-card transition-shadow hover:shadow-lift"
                 >
                   <h3 className="font-semibold text-ink">{f.title}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
@@ -121,8 +149,11 @@ export function CaseStudy() {
           </div>
 
           {/* Example use case */}
-          <div className="rounded-2xl border border-accent/20 bg-accent-wash p-6">
-            <h2 className="text-base font-bold text-ink">Example use case</h2>
+          <div className="rounded-2xl border border-accent/20 bg-accent-wash p-6 sm:p-7">
+            <div className="flex items-center gap-2">
+              <Sparkles size={18} className="text-accent" />
+              <h2 className="text-base font-bold text-ink">Example use case</h2>
+            </div>
             <p className="mt-3 leading-relaxed text-ink-soft">
               {cs.exampleUseCase}
             </p>
@@ -132,7 +163,9 @@ export function CaseStudy() {
         {/* Sidebar */}
         <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
           <div className="rounded-2xl border border-surface-line bg-white p-6 shadow-card">
-            <h3 className="text-sm font-bold text-ink">Business concepts applied</h3>
+            <h3 className="text-sm font-bold text-ink">
+              Business concepts applied
+            </h3>
             <div className="mt-3 flex flex-wrap gap-1.5">
               {cs.conceptsApplied.map((c) => (
                 <Tag key={c}>{c}</Tag>
@@ -140,12 +173,11 @@ export function CaseStudy() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-ink bg-ink p-6 text-white">
-            <div className="flex items-center gap-2">
-              <Briefcase size={16} className="text-accent-soft" />
-              <h3 className="text-sm font-bold">What this demonstrates to employers</h3>
-            </div>
-            <p className="mt-3 text-sm leading-relaxed text-slate-300">
+          <div className="overflow-hidden rounded-2xl border border-accent/30 bg-gradient-to-br from-accent to-accent/80 p-6 text-white shadow-lift">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/80">
+              What this tool demonstrates
+            </p>
+            <p className="mt-3 text-[15px] font-medium leading-relaxed">
               {cs.employerRelevance}
             </p>
           </div>
@@ -153,7 +185,9 @@ export function CaseStudy() {
           <div className="rounded-2xl border border-surface-line bg-surface-subtle p-6">
             <div className="flex items-center gap-2">
               <Lightbulb size={16} className="text-accent" />
-              <h3 className="text-sm font-bold text-ink">What I would improve next</h3>
+              <h3 className="text-sm font-bold text-ink">
+                What I would improve next
+              </h3>
             </div>
             <ul className="mt-3 space-y-2">
               {cs.improveNext.map((item) => (
@@ -198,14 +232,14 @@ function Section({
   title,
   children,
 }: {
-  icon: LucideIcon;
+  icon?: LucideIcon;
   title: string;
   children: React.ReactNode;
 }) {
   return (
     <div>
       <div className="flex items-center gap-2">
-        <Icon size={18} className="text-accent" />
+        {Icon && <Icon size={18} className="text-accent" />}
         <h2 className="text-base font-bold text-ink">{title}</h2>
       </div>
       <div className="mt-3 leading-relaxed text-ink-soft">{children}</div>

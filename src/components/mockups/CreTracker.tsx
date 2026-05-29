@@ -9,7 +9,7 @@ const tenants = [
 
 export function CreTracker() {
   return (
-    <MockWindow title="CRE Lease Expiry & Flight Risk Tracker">
+    <MockWindow title="CRE Lease Expiry & Flight Risk Tracker" tabs={["Tenants", "Timeline", "Outreach"]}>
       <div className="mb-3 flex flex-wrap gap-2">
         <Pill tone="red">2 high flight risk</Pill>
         <Pill tone="amber">5 in rollover window</Pill>

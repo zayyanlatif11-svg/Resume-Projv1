@@ -24,6 +24,12 @@ export interface Project {
   /** Business / domain concepts surfaced as small tags. */
   concepts: string[];
   status: ProjectStatus;
+  /**
+   * Two illustrative sample metrics shown in the card's dashboard-snapshot
+   * header. These are sample figures, not real data — they mirror the
+   * mockups on the case study page.
+   */
+  metrics: { label: string; value: string }[];
 }
 
 export const projects: Project[] = [
@@ -49,6 +55,10 @@ export const projects: Project[] = [
       "Deal origination",
     ],
     status: "Built",
+    metrics: [
+      { label: "Targets tracked", value: "42" },
+      { label: "In conversation", value: "3" },
+    ],
   },
   {
     slug: "smb-due-diligence-addback-scrubber",
@@ -72,6 +82,10 @@ export const projects: Project[] = [
       "Accounting judgment",
     ],
     status: "Prototype",
+    metrics: [
+      { label: "Adjusted EBITDA", value: "$485K" },
+      { label: "Risk flags", value: "1" },
+    ],
   },
   {
     slug: "sf-cre-lease-expiry-tracker",
@@ -95,6 +109,10 @@ export const projects: Project[] = [
       "B2B lead generation",
     ],
     status: "Prototype",
+    metrics: [
+      { label: "High flight risk", value: "2" },
+      { label: "In rollover window", value: "5" },
+    ],
   },
   {
     slug: "riskledger-operational-risk",
@@ -118,6 +136,10 @@ export const projects: Project[] = [
       "Management reporting",
     ],
     status: "Built",
+    metrics: [
+      { label: "Risks tracked", value: "9" },
+      { label: "High severity", value: "2" },
+    ],
   },
   {
     slug: "post-trade-analytics-platform",
@@ -141,6 +163,10 @@ export const projects: Project[] = [
       "Performance attribution",
     ],
     status: "Prototype",
+    metrics: [
+      { label: "Expectancy", value: "+0.21R" },
+      { label: "Win rate", value: "51%" },
+    ],
   },
   {
     slug: "internship-lead-tracker",
@@ -164,5 +190,9 @@ export const projects: Project[] = [
       "Workflow design",
     ],
     status: "In Progress",
+    metrics: [
+      { label: "Active leads", value: "34" },
+      { label: "Replies", value: "6" },
+    ],
   },
 ];

@@ -9,7 +9,7 @@ const rows = [
 
 export function SearchFundCrm() {
   return (
-    <MockWindow title="Sourcing CRM — pipeline">
+    <MockWindow title="Sourcing CRM — pipeline" tabs={["Pipeline", "Brokers", "Follow-ups"]}>
       <div className="mb-3 flex flex-wrap gap-2">
         <Pill tone="blue">42 targets</Pill>
         <Pill tone="amber">11 awaiting follow-up</Pill>
