@@ -11,18 +11,26 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
   ::selection {
-    @apply bg-accent/15 text-ink;
+    @apply bg-accent/20 text-ink;
   }
 }
 
 @layer components {
   .container-content {
-    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+    @apply mx-auto w-full max-w-content px-6 sm:px-8;
+  }
+  /* Oversized, light-weight editorial display type */
+  .display {
+    @apply font-light leading-[1.02] tracking-tightest text-ink;
   }
   .chip {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-surface-line bg-white px-3 py-1 text-xs font-medium text-ink-muted;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-surface-line bg-surface px-3 py-1 text-xs font-medium text-ink-muted;
   }
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.14em] text-accent;
+    @apply text-[11px] font-medium uppercase tracking-[0.2em] text-ink-muted;
+  }
+  /* Quiet underlined link, editorial style */
+  .link-underline {
+    @apply inline-flex items-center gap-1.5 border-b border-ink/30 pb-0.5 text-ink transition-colors hover:border-ink;
   }
 }

@@ -7,26 +7,28 @@ import { site } from "@/data/site";
  */
 export function Capabilities() {
   return (
-    <section className="border-b border-surface-line bg-white py-12 sm:py-14">
+    <section className="border-y border-surface-line bg-surface py-20 sm:py-28">
       <div className="container-content">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {site.capabilities.map((cap) => (
-            <div key={cap.group}>
-              <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent">
-                {cap.group}
-              </h3>
-              <ul className="mt-3 space-y-1.5">
-                {cap.items.map((item) => (
-                  <li
-                    key={item}
-                    className="text-sm leading-relaxed text-ink-soft"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="grid gap-10 lg:grid-cols-[0.5fr_1fr] lg:gap-16">
+          <p className="eyebrow lg:pt-1">Capabilities</p>
+
+          <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
+            {site.capabilities.map((cap) => (
+              <div key={cap.group}>
+                <h3 className="text-sm font-medium text-ink">{cap.group}</h3>
+                <ul className="mt-4 space-y-2">
+                  {cap.items.map((item) => (
+                    <li
+                      key={item}
+                      className="text-sm font-light leading-relaxed text-ink-muted"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

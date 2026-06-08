@@ -22,10 +22,11 @@ export const site = {
     "Tools for sourcing, diligence, risk, and operations workflows.",
 
   hero: {
-    eyebrow: "Business · Finance · Operations",
-    headline: "Practical analyst tools for the messy parts of business",
+    eyebrow: "Business · Finance · Operations — SF Bay Area / NYC",
+    headline:
+      "Hi, I'm Zayyan — I build practical analyst tools for the messy parts of business.",
     subheadline:
-      "I design working tools for real finance and operations workflows — search-fund sourcing, SMB diligence, CRE prospecting, risk tracking, and performance review. Each project takes a fragmented, judgment-heavy process and turns it into something an analyst or operator can actually use.",
+      "Working tools for real finance and operations workflows: search-fund sourcing, SMB diligence, CRE prospecting, risk tracking, and performance review. Each one takes a fragmented, judgment-heavy process and turns it into something an analyst or operator can actually use.",
     // An honest, low-key note about how these get built — kept small on purpose
     // so the business thinking leads, not the tooling.
     note: "Built quickly and AI-assisted — what I sometimes call “vibe-coding” — but always designed around the underlying business judgment.",

@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Hero } from "@/components/Hero";
-import { Capabilities } from "@/components/Capabilities";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { WhyProjectsMatter } from "@/components/WhyProjectsMatter";
 import { HowIBuild } from "@/components/HowIBuild";
-import { CaseStudyPreviews } from "@/components/CaseStudyPreviews";
+import { Capabilities } from "@/components/Capabilities";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 
@@ -28,11 +27,10 @@ export function Home() {
   return (
     <>
       <Hero />
-      <Capabilities />
       <ProjectGallery />
       <WhyProjectsMatter />
       <HowIBuild />
-      <CaseStudyPreviews />
+      <Capabilities />
       <About />
       <Contact />
     </>
