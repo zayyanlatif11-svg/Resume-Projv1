@@ -11,18 +11,53 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
   ::selection {
-    @apply bg-accent/15 text-ink;
+    @apply bg-accent/20 text-ink;
   }
 }
 
 @layer components {
   .container-content {
-    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+    @apply mx-auto w-full max-w-content px-6 sm:px-8;
+  }
+  /* Oversized, light-weight editorial display type */
+  .display {
+    @apply text-balance font-light leading-[1.02] tracking-tightest text-ink;
+  }
+  /* A warm mat/frame so white app screenshots sit intentionally on cream */
+  .mock-frame {
+    @apply rounded-2xl border border-surface-line bg-surface p-2 sm:p-3;
   }
   .chip {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-surface-line bg-white px-3 py-1 text-xs font-medium text-ink-muted;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-surface-line bg-surface px-3 py-1 text-xs font-medium text-ink-muted;
   }
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.14em] text-accent;
+    @apply text-[11px] font-medium uppercase tracking-[0.2em] text-ink-muted;
+  }
+  /* Quiet underlined link, editorial style */
+  .link-underline {
+    @apply inline-flex items-center gap-1.5 border-b border-ink/30 pb-0.5 text-ink transition-colors hover:border-ink;
+  }
+}
+
+@layer utilities {
+  /* Subtle scroll-in reveal — fade + small rise, once, no bounce */
+  .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out;
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 }

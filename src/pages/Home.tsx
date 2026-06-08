@@ -4,9 +4,10 @@ import { Hero } from "@/components/Hero";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { WhyProjectsMatter } from "@/components/WhyProjectsMatter";
 import { HowIBuild } from "@/components/HowIBuild";
-import { CaseStudyPreviews } from "@/components/CaseStudyPreviews";
+import { Capabilities } from "@/components/Capabilities";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
+import { Reveal } from "@/components/Reveal";
 
 export function Home() {
   const location = useLocation();
@@ -27,12 +28,24 @@ export function Home() {
   return (
     <>
       <Hero />
-      <ProjectGallery />
-      <WhyProjectsMatter />
-      <HowIBuild />
-      <CaseStudyPreviews />
-      <About />
-      <Contact />
+      <Reveal>
+        <ProjectGallery />
+      </Reveal>
+      <Reveal>
+        <WhyProjectsMatter />
+      </Reveal>
+      <Reveal>
+        <HowIBuild />
+      </Reveal>
+      <Reveal>
+        <Capabilities />
+      </Reveal>
+      <Reveal>
+        <About />
+      </Reveal>
+      <Reveal>
+        <Contact />
+      </Reveal>
     </>
   );
 }

@@ -28,33 +28,33 @@ const steps = [
 
 export function HowIBuild() {
   return (
-    <section id="process" className="scroll-mt-20 bg-white py-20 sm:py-24">
+    <section id="process" className="scroll-mt-20 py-20 sm:py-28">
       <div className="container-content">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <p className="eyebrow">Process</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+            <h2 className="display mt-5 text-3xl sm:text-4xl">
               How I approach projects
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-ink-muted">
+            <p className="mt-6 text-base font-light leading-relaxed text-ink-soft">
               I treat each project like a small product built for one job. The
-              goal is never to look impressive technically — it is to produce
+              goal is never to look impressive technically — it's to produce
               something an analyst or operator would actually keep open.
             </p>
           </div>
 
-          <ol className="space-y-3">
+          <ol className="border-t border-ink/15">
             {steps.map((step, i) => (
               <li
                 key={step.title}
-                className="flex gap-4 rounded-xl border border-surface-line bg-surface-subtle p-5"
+                className="flex gap-6 border-b border-ink/15 py-7"
               >
-                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-ink text-sm font-bold text-white">
-                  {i + 1}
+                <span className="pt-0.5 font-mono text-sm tabular-nums text-accent">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="font-semibold text-ink">{step.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-muted">
+                  <h3 className="text-lg font-normal text-ink">{step.title}</h3>
+                  <p className="mt-2 text-sm font-light leading-relaxed text-ink-muted">
                     {step.description}
                   </p>
                 </div>

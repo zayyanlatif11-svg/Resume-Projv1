@@ -5,19 +5,19 @@ export default {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#0f172a", // slate-900 navy/charcoal
-          soft: "#1e293b",
-          muted: "#475569",
+          DEFAULT: "#1a1a1a", // near-black
+          soft: "#44423d",
+          muted: "#8c877d", // warm muted gray
         },
         accent: {
-          DEFAULT: "#1d4ed8", // refined blue
-          soft: "#3b82f6",
-          wash: "#eff4ff",
+          DEFAULT: "#9a5b3b", // single muted clay accent, used sparingly
+          soft: "#b9794f",
+          wash: "#f1e9e1",
         },
         surface: {
-          DEFAULT: "#ffffff",
-          subtle: "#f8fafc",
-          line: "#e2e8f0",
+          DEFAULT: "#fffdf9", // raised cards (warm white)
+          subtle: "#faf8f4", // page background (cream)
+          line: "#e8e2d6", // warm hairline
         },
       },
       fontFamily: {
@@ -42,11 +42,14 @@ export default {
         ],
       },
       boxShadow: {
-        card: "0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -12px rgba(15, 23, 42, 0.12)",
-        lift: "0 2px 4px rgba(15, 23, 42, 0.05), 0 18px 40px -18px rgba(15, 23, 42, 0.22)",
+        card: "0 1px 2px rgba(26, 26, 26, 0.03), 0 10px 30px -16px rgba(26, 26, 26, 0.10)",
+        lift: "0 2px 4px rgba(26, 26, 26, 0.04), 0 20px 44px -22px rgba(26, 26, 26, 0.18)",
       },
       maxWidth: {
-        content: "1180px",
+        content: "1080px",
+      },
+      letterSpacing: {
+        tightest: "-0.04em",
       },
     },
   },
