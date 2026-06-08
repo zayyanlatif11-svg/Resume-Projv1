@@ -38,3 +38,26 @@
     @apply inline-flex items-center gap-1.5 border-b border-ink/30 pb-0.5 text-ink transition-colors hover:border-ink;
   }
 }
+
+@layer utilities {
+  /* Subtle scroll-in reveal — fade + small rise, once, no bounce */
+  .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out;
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
