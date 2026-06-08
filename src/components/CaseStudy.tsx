@@ -120,7 +120,9 @@ export function CaseStudy() {
                 Sample-data mockup
               </span>
             </div>
-            <Mockup mockup={cs.mockup} />
+            <div className="mock-frame">
+              <Mockup mockup={cs.mockup} />
+            </div>
           </div>
 
           <div className="grid gap-10 sm:grid-cols-2">

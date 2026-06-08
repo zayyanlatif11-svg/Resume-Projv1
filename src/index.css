@@ -21,7 +21,11 @@
   }
   /* Oversized, light-weight editorial display type */
   .display {
-    @apply font-light leading-[1.02] tracking-tightest text-ink;
+    @apply text-balance font-light leading-[1.02] tracking-tightest text-ink;
+  }
+  /* A warm mat/frame so white app screenshots sit intentionally on cream */
+  .mock-frame {
+    @apply rounded-2xl border border-surface-line bg-surface p-2 sm:p-3;
   }
   .chip {
     @apply inline-flex items-center gap-1.5 rounded-full border border-surface-line bg-surface px-3 py-1 text-xs font-medium text-ink-muted;
