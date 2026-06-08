@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 import type { Project } from "@/data/projects";
-import { StatusBadge, Tag } from "@/components/ui/Badge";
+import { StatusBadge } from "@/components/ui/Badge";
 import { CardPreview } from "@/components/CardPreview";
 
 export function ProjectCard({
@@ -48,9 +48,17 @@ export function ProjectCard({
       </ul>
 
       <div className="mt-auto pt-5">
-        <div className="flex flex-wrap gap-1.5">
-          {project.concepts.slice(0, 3).map((c) => (
-            <Tag key={c}>{c}</Tag>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.1em] text-ink-muted">
+          Relevant for
+        </p>
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {project.roleFit.map((r) => (
+            <span
+              key={r}
+              className="inline-flex items-center rounded-md bg-accent-wash px-2.5 py-1 text-xs font-medium text-accent ring-1 ring-inset ring-accent/15"
+            >
+              {r}
+            </span>
           ))}
         </div>
 

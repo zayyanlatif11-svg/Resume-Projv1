@@ -163,6 +163,20 @@ export function CaseStudy() {
         {/* Sidebar */}
         <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
           <div className="rounded-2xl border border-surface-line bg-white p-6 shadow-card">
+            <h3 className="text-sm font-bold text-ink">Relevant for roles in</h3>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {project.roleFit.map((r) => (
+                <span
+                  key={r}
+                  className="inline-flex items-center rounded-md bg-accent-wash px-2.5 py-1 text-xs font-medium text-accent ring-1 ring-inset ring-accent/15"
+                >
+                  {r}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-surface-line bg-white p-6 shadow-card">
             <h3 className="text-sm font-bold text-ink">
               Business concepts applied
             </h3>

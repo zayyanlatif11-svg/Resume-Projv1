@@ -30,6 +30,11 @@ export interface Project {
    * mockups on the case study page.
    */
   metrics: { label: string; value: string }[];
+  /**
+   * Role types this project is most relevant to, so a hiring manager can see
+   * fit at a glance. Keep to 2–3 short labels.
+   */
+  roleFit: string[];
 }
 
 export const projects: Project[] = [
@@ -59,6 +64,7 @@ export const projects: Project[] = [
       { label: "Targets tracked", value: "42" },
       { label: "In conversation", value: "3" },
     ],
+    roleFit: ["Search fund analyst", "Business development", "Deal sourcing"],
   },
   {
     slug: "smb-due-diligence-addback-scrubber",
@@ -86,6 +92,7 @@ export const projects: Project[] = [
       { label: "Adjusted EBITDA", value: "$485K" },
       { label: "Risk flags", value: "1" },
     ],
+    roleFit: ["Diligence analyst", "Accounting / FP&A", "M&A"],
   },
   {
     slug: "sf-cre-lease-expiry-tracker",
@@ -113,6 +120,7 @@ export const projects: Project[] = [
       { label: "High flight risk", value: "2" },
       { label: "In rollover window", value: "5" },
     ],
+    roleFit: ["CRE / brokerage", "Market research", "Lead generation"],
   },
   {
     slug: "riskledger-operational-risk",
@@ -140,6 +148,7 @@ export const projects: Project[] = [
       { label: "Risks tracked", value: "9" },
       { label: "High severity", value: "2" },
     ],
+    roleFit: ["Operations", "Risk & controls", "Compliance"],
   },
   {
     slug: "post-trade-analytics-platform",
@@ -167,6 +176,7 @@ export const projects: Project[] = [
       { label: "Expectancy", value: "+0.21R" },
       { label: "Win rate", value: "51%" },
     ],
+    roleFit: ["Trading / markets", "Data analytics", "Performance review"],
   },
   {
     slug: "internship-lead-tracker",
@@ -194,5 +204,6 @@ export const projects: Project[] = [
       { label: "Active leads", value: "34" },
       { label: "Replies", value: "6" },
     ],
+    roleFit: ["Sales / revenue ops", "Recruiting ops", "CRM"],
   },
 ];

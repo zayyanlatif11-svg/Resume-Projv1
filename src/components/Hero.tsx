@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, Mail } from "lucide-react";
+import { ArrowRight, Download, Mail } from "lucide-react";
 import { site } from "@/data/site";
 
 function scrollTo(id: string) {
@@ -21,9 +21,7 @@ export function Hero() {
       />
       <div className="container-content relative py-20 sm:py-28">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="chip mb-6 bg-accent-wash text-accent ring-1 ring-inset ring-accent/15">
-            {site.positioning}
-          </span>
+          <p className="eyebrow mb-5">{site.hero.eyebrow}</p>
 
           <h1 className="text-balance text-4xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-6xl">
             {site.hero.headline}
@@ -40,17 +38,18 @@ export function Hero() {
             >
               View Projects <ArrowRight size={16} />
             </button>
-            <button
-              onClick={() => scrollTo("case-studies")}
+            <a
+              href={site.resumePath}
+              download
               className="inline-flex items-center gap-2 rounded-lg border border-surface-line bg-white px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-surface-subtle"
             >
-              <FileText size={16} /> See Case Studies
-            </button>
+              <Download size={16} /> Download Resume
+            </a>
             <button
               onClick={() => scrollTo("contact")}
               className="inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-ink-muted transition-colors hover:text-ink"
             >
-              <Mail size={16} /> Contact Me
+              <Mail size={16} /> Contact
             </button>
           </div>
 
@@ -61,6 +60,10 @@ export function Hero() {
               </span>
             ))}
           </div>
+
+          <p className="mx-auto mt-8 max-w-xl text-xs leading-relaxed text-ink-muted/80">
+            {site.hero.note}
+          </p>
         </div>
       </div>
     </section>
